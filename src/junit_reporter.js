@@ -249,12 +249,23 @@
                 require("mkdirp").sync(path); // make sure the path exists
                 var filepath = nodejs_path.join(path, filename);
                 var xmlfile = fs.openSync(filepath, "w");
+                console.log('XMLFILEXMLFILEXMLFILEXMLFILEXMLFILEXMLFILEXMLFILEXMLFILEXMLFILE');
+                console.log(xmlfile);
                 fs.writeSync(xmlfile, text, 0);
                 fs.closeSync(xmlfile);
                 return;
             }
             // Attempt writing with each possible environment.
             // Track errors in case no write succeeds
+
+            console.log('PATHPATHPATHPATHPATHPATHPATHPATHPATHPATHPATHPATHPATHPATHPATHPATHPATHPATH');
+            console.log(path);
+            console.log('FILENAMEFILENAMEFILENAMEFILENAMEFILENAMEFILENAMEFILENAMEFILENAMEFILENAMEFILENAME');
+            console.log(filename);
+            console.log('__filename');
+            console.log(__filename);
+            console.log('__dirname');
+            console.log(__dirname);
             try {
                 phantomWrite(path, filename, text);
                 return;
